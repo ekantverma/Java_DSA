@@ -85,6 +85,35 @@ public class BinaryTree1 {
                 }
             }
         }
+
+        // Height of tree
+        public static int heightTree(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int lh = heightTree(root.left);
+            int rh = heightTree(root.right);
+            return Math.max(lh, rh) + 1;
+        }
+
+        public static int count(Node root) {
+            if (root == null) {
+                return 0;
+            }
+
+            int lc = count(root.left);
+            int rc = count(root.right);
+            return lc + rc + 1;
+        }
+
+        public static int sum(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int ls = sum(root.left);
+            int rs = sum(root.right);
+            return ls + rs + root.data;
+        }
     }
 
     public static void main(String[] args) {
@@ -93,6 +122,6 @@ public class BinaryTree1 {
         Node root = tree.buildTree(nodes);
         // System.out.println(root.data);
 
-        tree.levelOrder(root);
+        System.out.println(tree.sum(root));
     }
 }
