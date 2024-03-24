@@ -3,7 +3,7 @@ package BinaryTree;
 import java.util.*;
 
 public class BinaryTree1 {
-    static class Node {
+    public static class Node {
         int data;
         Node left;
         Node right;
