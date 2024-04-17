@@ -1,7 +1,5 @@
 package Trie;
 
-import java.util.*;
-
 public class WordBreakProblem {
     static class Node {
         Node[] children = new Node[26];
