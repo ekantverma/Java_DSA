@@ -1,8 +1,8 @@
-package Graphs;
+package Graphs.Graph1;
 
 import java.util.*;
 
-public class graph1 {
+public class graph_Impli {
     static class Edge {
         int src;
         int dest;
