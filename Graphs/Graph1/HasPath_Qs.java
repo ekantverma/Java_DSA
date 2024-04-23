@@ -2,7 +2,7 @@ package Graphs.Graph1;
 
 import java.util.*;
 
-public class HasPath_Qs1 {
+public class HasPath_Qs {
     static class Edge {
         int src;
         int dest;
@@ -50,6 +50,19 @@ public class HasPath_Qs1 {
         graph[6].add(new Edge(6, 5, 1));
     }
 
+    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]) {
+        // Visit
+        System.out.println(curr + " ");
+        vis[curr] = true;
+
+        for (int i = 0; i < graph[curr].size(); i++) {
+            Edge e = graph[curr].get(i);
+            if (!vis[e.dest]) {
+                dfs(graph, e.dest, vis);
+            }
+        }
+    }
+
     public static void bfs(ArrayList<Edge>[] graph) {
         Queue<Integer> q = new LinkedList<>();
         boolean vise[] = new boolean[graph.length];
@@ -69,20 +82,24 @@ public class HasPath_Qs1 {
         }
     }
 
-    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]) {
-        // Visit
-        System.out.println(curr + " ");
-        vis[curr] = true;
-
-        for (int i = 0; i < graph[curr].size(); i++) {
-            Edge e = graph[curr].get(i);
-            if (!vis[e.dest]) {
-                dfs(graph, e.dest, vis);
+    public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean vis[]) {
+        if (src == dest) {
+            return true;
+        }
+        vis[src] = true;
+        for (int i = 0; i < graph[src].size(); i++) {
+            Edge e = graph[src].get(i);
+            if (!vis[e.dest] && hasPath(graph, e.dest, dest, vis)) {
+                return true;
             }
         }
+        return false;
     }
 
     public static void main(String[] args) {
-
+        int V = 7;
+        ArrayList<Edge> graph[] = new ArrayList[V];
+        CreateGraph(graph);
+        System.err.println(hasPath(graph, 0, 5, new boolean[V]));
     }
 }
