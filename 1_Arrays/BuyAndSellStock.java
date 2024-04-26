@@ -1,4 +1,4 @@
-package Arrays;
+
 /* 
     DSA Sheet No. 19
     Topic - Arrays
@@ -13,16 +13,16 @@ public class BuyAndSellStock {
             if (buyPrice < prices[i]) {
                 int profitToday = prices[i] - buyPrice;
                 profit = Math.max(profitToday, profit);
-            }
-            else {
+            } else {
                 buyPrice = prices[i];
             }
         }
 
         return profit;
     }
+
     public static void main(String args[]) {
-        int prices[] = {7,1,5,3,6,4};
+        int prices[] = { 7, 1, 5, 3, 6, 4 };
         System.out.println(maxProfit(prices));
     }
 }
