@@ -41,10 +41,38 @@ public class DP1 {
         return countWays(n - 1) + countWays(n - 2);
     }
 
+    public static int countWaysMemo(int n, int dp[]) {
+        if (n == 0) {
+            return 1;
+        }
+        if (n < 0) {
+            return 0;
+        }
+        if (dp[n] != -1) {
+            return dp[n];
+        }
+        dp[n] = countWaysMemo(n - 1, dp) + countWaysMemo(n - 2, dp);
+        return dp[n];
+    }
+
+    public static int countWaysTab(int n, int dp[]) {
+        if (n == 0) {
+            return 1;
+        }
+        if (n < 0) {
+            return 0;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            dp[n] = countWaysTab(n - 1, dp) + countWaysTab(n - 2, dp);
+        }
+        return dp[n];
+    }
+
     public static void main(String[] args) {
         int n = 5;
         int dp[] = new int[n + 1];
         Arrays.fill(dp, -1);
-        System.out.println(countWays(n));
+        System.out.println(countWaysTab(n, dp));
     }
 }
