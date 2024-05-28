@@ -1,4 +1,3 @@
-package DynamicProgramming;
 
 public class DP3 {
     // we have to find no of ways to giving coins in this question.
