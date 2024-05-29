@@ -1,5 +1,3 @@
-package DynamicProgramming.DP1;
-
 public class DP2 {
 
     // O(2^n)

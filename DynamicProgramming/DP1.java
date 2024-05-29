@@ -1,5 +1,3 @@
-package DynamicProgramming.DP1;
-
 import java.util.Arrays;
 
 public class DP1 {
