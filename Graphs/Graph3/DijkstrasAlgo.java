@@ -82,7 +82,9 @@ public class DijkstrasAlgo {
                     }
                 }
             }
-        }
+        };
+
+        
         // Print all source to dest
         for (int i = 0; i < dist.length; i++) {
             System.out.print(dist[i] + " ");
