@@ -7,8 +7,8 @@ public class MergeSort {
         int mid = si + (ei - si) / 2; // or = (si + ei) / 2;
         mergeSort(arr, si, mid);
         mergeSort(arr, mid + 1, ei);
-
         merge(arr, si, mid, ei);
+
     }
 
     // merge method to merge the sorted parts
