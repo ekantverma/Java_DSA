@@ -256,7 +256,6 @@ public class LL1 {
         return false;
     }
 
-
     public static void removeCycle() {
         // detect cycle
         Node slow = head;
