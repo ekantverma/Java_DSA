@@ -19,9 +19,9 @@ public class Topological_Sort {
             graph[i] = new ArrayList<>();
         }
 
-        // graph[0].add(new Edge(0, 0));
+        graph[0].add(new Edge(0, 0));
 
-        // graph[1].add(new Edge(1, 1));
+        graph[1].add(new Edge(1, 1));
 
         graph[2].add(new Edge(2, 3));
 

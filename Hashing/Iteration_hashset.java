@@ -1,6 +1,7 @@
 import java.util.*;
+
 public class Iteration_hashset {
-    public static void main(String args[]){
+    public static void main(String args[]) {
         HashSet<Integer> hs = new HashSet<>();
 
         hs.add(1);
@@ -9,15 +10,15 @@ public class Iteration_hashset {
         hs.add(4);
 
         Iterator it = hs.iterator();
-        while(it.hasNext()){
-            System.out.print(it.next()+" ");
+        while (it.hasNext()) {
+            System.out.print(it.next() + " ");
         }
         System.out.println();
-        //using advance for loop
+        // using advance for loop
 
-        for(Integer i : hs){
-            System.out.print(i+" ");
+        for (Integer i : hs) {
+            System.out.print(i + " ");
         }
     }
-    
+
 }
